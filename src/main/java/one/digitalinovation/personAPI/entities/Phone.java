@@ -9,17 +9,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+
+@Entity
 /*Notações Lombok*/
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 /*-------------------*/
-
-/*Notações Lombok*/
-@Entity
-/*-------------------*/
-
 public class Phone {
 
     @Id
