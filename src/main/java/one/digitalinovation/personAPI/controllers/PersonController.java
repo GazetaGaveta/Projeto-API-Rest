@@ -3,7 +3,6 @@ package one.digitalinovation.personAPI.controllers;
 import lombok.AllArgsConstructor;
 import one.digitalinovation.personAPI.dto.request.PersonDTO;
 import one.digitalinovation.personAPI.dto.response.MessageResponseDTO;
-import one.digitalinovation.personAPI.entities.Person;
 import one.digitalinovation.personAPI.exception.PersonNotFoundException;
 import one.digitalinovation.personAPI.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonController {
 
-    private PersonService personService;
+    private final PersonService personService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -26,9 +25,8 @@ public class PersonController {
         return personService.createPerson(personDTO);
     }
 
-
     @GetMapping
-    public List<PersonDTO> listAll(){
+    public List<PersonDTO> listAll() {
         return personService.listAll();
     }
 

@@ -11,10 +11,12 @@ import javax.persistence.Enumerated;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+/*Notações Lombok*/
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+/*-------------------*/
 public class PhoneDTO {
 
     private Long id;

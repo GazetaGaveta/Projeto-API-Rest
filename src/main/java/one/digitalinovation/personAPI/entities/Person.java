@@ -35,4 +35,9 @@ public class Person {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Phone> phones;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    //(fetch = FetchType.LAZY, optional = false)
+    //@JoinColumn(nullable = false)
+    private List<Address> addreeessss;
 }

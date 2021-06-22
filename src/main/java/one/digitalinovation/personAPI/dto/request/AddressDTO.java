@@ -4,11 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import one.digitalinovation.personAPI.entities.Address;
-import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -18,29 +17,32 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 /*-------------------*/
-public class PersonDTO {
+
+public class AddressDTO {
 
     private Long id;
 
     @NotEmpty
-    @Size(min = 2, max = 100)
-    private String firstName;
+    @Size(min = 3, max = 30)
+    private String country;
 
     @NotEmpty
-    @Size(min = 2, max = 100)
-    private String lastName;
+    @Size(min = 3, max = 30)
+    private String state;
 
     @NotEmpty
-    @CPF
-    private String cpf;
-
-    private String birthDate;
+    @Size(min = 3, max = 30)
+    private String city;
 
     @NotEmpty
-    @Valid
-    private List<PhoneDTO> phones;
+    @Size(min = 3, max = 30)
+    private String neighborhood;
 
     @NotEmpty
-    @Valid
-    private List<AddressDTO> addreeessss;
+    @Size(min = 3, max = 60)
+    private String street;
+
+    @NotNull
+    @Size(min = 3, max = 7)
+    private String number;
 }
